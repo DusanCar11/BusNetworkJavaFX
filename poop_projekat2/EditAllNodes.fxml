@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="302.0" prefWidth="508.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="poop_projekat2.EditAllNodesController">
+   <children>
+      <Button layoutX="228.0" layoutY="246.0" mnemonicParsing="false" onAction="#EditAll" text="Change" />
+      <Label layoutX="30.0" layoutY="48.0" text="Number of branches of nodes to be altered:" />
+      <TextField fx:id="fieldOne" layoutX="301.0" layoutY="44.0" />
+      <RadioButton fx:id="rbMore" layoutX="93.0" layoutY="89.0" mnemonicParsing="false" selected="true" text="More branches">
+         <toggleGroup>
+            <ToggleGroup fx:id="grupa1" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton layoutX="285.0" layoutY="89.0" mnemonicParsing="false" text="Less branches" toggleGroup="$grupa1" />
+      <Label layoutX="93.0" layoutY="151.0" text="Size of nodes:" />
+      <Label layoutX="90.0" layoutY="194.0" text="Color of nodes:" />
+      <TextField fx:id="fieldTwo" layoutX="301.0" layoutY="147.0" />
+      <ColorPicker fx:id="colorPick" layoutX="301.0" layoutY="190.0" prefHeight="25.0" prefWidth="149.0" />
+   </children>
+</AnchorPane>

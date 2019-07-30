@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="438.0" prefWidth="613.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poop_projekat2.FXMLDocumentController">
+   <top>
+      <MenuBar fx:id="menuBar" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="613.0" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="New">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleAddItem" text="New node" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleAddBranchItem" text="New branch" />
+                  <MenuItem mnemonicParsing="false" onAction="#discoNit" text="Start disco" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="Import file">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#handleImportItem" text="CSV File" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleImportItem" text="GML File" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleImportItem" text="DNG File" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Export">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#ExportAsDNG" text="Export as .dng" />
+                      <MenuItem mnemonicParsing="false" onAction="#ExportImage" text="Export as image:" />
+                    </items>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleChangeNameItem" text="Change node's name" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="Node color:">
+                    <items>
+                      <MenuItem mnemonicParsing="false">
+                           <graphic>
+                              <ColorPicker fx:id="chosenNodeColor" onAction="#nodeColorChanged" prefWidth="50.0" />
+                           </graphic>
+                        </MenuItem>
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Branch color:">
+                     <items>
+                        <MenuItem mnemonicParsing="false">
+                           <graphic>
+                              <ColorPicker fx:id="chosenBranchColor" onAction="#branchColorChanged" prefWidth="50.0" />
+                           </graphic>
+                        </MenuItem>
+                     </items>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleSelectedNodeEditItem" text="Edit selected node:" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleEditBranchNum" text="Edit nodes with branch number:" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="undo" mnemonicParsing="false" onAction="#handleUndoItem" text="Undo" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleRedoItem" text="Redo" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleHidingNodes" text="Hide nodes" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem mnemonicParsing="false" onAction="#handleResizeItem" text="Resize" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Algorithms">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleRefactorItem" text="Refactor" />
+                  <MenuItem mnemonicParsing="false" onAction="#shortestDialog" text="Shortest path" />
+                  <MenuItem mnemonicParsing="false" onAction="#force" text="Force Atlas" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Unspecified Menu">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <ScrollPane fx:id="scroll" onScroll="#zoom" prefHeight="200.0" prefWidth="612.0" BorderPane.alignment="CENTER">
+         <content>
+            <Canvas fx:id="canvas" height="425.0" onMouseDragged="#canvasDragged" onMousePressed="#canvasClicked" onMouseReleased="#canvasReleased" width="589.0" />
+         </content>
+      </ScrollPane>
+   </center>
+</BorderPane>

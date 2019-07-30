@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="236.0" prefWidth="464.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="poop_projekat2.AddBranchDialogController">
+   <children>
+      <Label layoutX="109.0" layoutY="42.0" text="Enter labels of the nodes you'd like to connect:" />
+      <Label layoutX="95.0" layoutY="85.0" text="From:" />
+      <Label layoutX="343.0" layoutY="85.0" text="To:" />
+      <TextField fx:id="nodeFrom" layoutX="36.0" layoutY="118.0" />
+      <TextField fx:id="nodeTo" layoutX="277.0" layoutY="118.0" />
+      <Button layoutX="206.0" layoutY="179.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Add" />
+   </children>
+</AnchorPane>
